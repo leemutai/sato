@@ -20,6 +20,18 @@
                     </tr>
                     </thead>
                     <tbody>
+                    {% for employee in employees %}
+                        <tr>
+                            <td>
+                                <a href="/employees/{{ employee.id }}">{{ employee.name }}</a>
+                            </td>
+                            <td>{{ employee.email }}</td>
+                            <td>{{ employee.dob }}</td>
+                            <td>{{ employee.salary }}</td>
+                        </tr>
+                    	
+                    {% endfor %}
+                    
                     
                     </tbody>
                 </table>
