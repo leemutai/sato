@@ -1,7 +1,28 @@
+import json
+import os.path
+
 from django.core.management import BaseCommand
+
+from data import settings
+from main_app.models import Employee
 
 
 class Command(BaseCommand):
     help = "Populate database with data"
+
     def handle(self, *args, **options):
-        pass
+        path = os.path.join(settings.BASE_DIR, 'employees.json')
+
+        self.stdout.write(self.style.SUCCESS('Started to Import Data'))
+        with open(path, ) as file:
+            employees = json.load(file)
+            for e in employees:
+                Employee.objects.create(
+                    name=e['name'],
+                    email=e['email'],
+                    dob=e['dob'],
+                    salary=e['salary'],
+                    disabled=e['disabled'],
+                )
+
+        self.stdout.write(self.style.SUCCESS('Completed    Importing Data'))

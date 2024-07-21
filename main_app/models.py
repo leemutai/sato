@@ -30,4 +30,5 @@ class Employee(models.Model):
 # pip install pillow
 # python manage.py populate
 # python manage.py seed_db
+# mockaroo.com
 
