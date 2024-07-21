@@ -26,3 +26,6 @@ class Command(BaseCommand):
                 )
 
         self.stdout.write(self.style.SUCCESS('Completed    Importing Data'))
+
+
+        # celery tasks
