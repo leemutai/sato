@@ -1,3 +1,4 @@
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,11 +24,11 @@
                     {% for employee in employees %}
                         <tr>
                             <td>
-                                <a href="/employees/{{ employee.id }}">{{ employee.name }}</a>
+                                <a href="/employees/{{ employee.id }}">{{ employee.name | capfirst}}</a>
                             </td>
                             <td>{{ employee.email }}</td>
                             <td>{{ employee.dob }}</td>
-                            <td>{{ employee.salary }}</td>
+                            <td>{{ employee.salary | intcomma }}</td>
                         </tr>
                     	
                     {% endfor %}
