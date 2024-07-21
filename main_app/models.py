@@ -28,3 +28,6 @@ class Employee(models.Model):
 # python manage.py makemigrations
 # python manage.py migrate
 # pip install pillow
+# python manage.py populate
+# python manage.py seed_db
+
